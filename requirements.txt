@@ -1,7 +1,6 @@
-flask==2.3.3
-pandas==2.2.2
-matplotlib==3.8.4
-torch==2.3.0
-transformers==4.41.1
-scikit-learn==1.5.0   # Required by many transformer pipelines
-gunicorn==21.2.0      # For deployment (used by Render/Railway/Heroku)
+flask
+pandas
+matplotlib
+torch
+transformers
+protobuf

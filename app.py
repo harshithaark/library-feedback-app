@@ -12,8 +12,11 @@ import torch
 app = Flask(__name__)
 
 # Load the BERT model and tokenizer
-model_path = 'model/'  # Path to your model directory
+model_path = "distilbert-base-uncased"
 tokenizer = DistilBertTokenizer.from_pretrained(model_path)
+
+  # Path to your model directory
+
 model = DistilBertForSequenceClassification.from_pretrained(model_path)
 
 
