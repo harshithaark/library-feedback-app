@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Analysis Graph</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- If you have a custom CSS file -->
+</head>
+<body style="background-color: #f4f7f6;">
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4" style="color: #004c99; font-family: 'Arial', sans-serif;">Feedback Analysis Graph</h1>
+
+        <!-- Graph Display -->
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='feedback_analysis.png') }}" alt="Feedback Analysis Graph" class="img-fluid graph-size">
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-4 text-center">
+            <a href="/" class="btn btn-primary btn-lg btn-back">Back to Feedback Form</a>
+        </div>
+    </div>
+
+</body>
+</html>

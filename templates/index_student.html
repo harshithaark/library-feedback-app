@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='js/alert.js') }}"></script>  <!-- Include the JS file here -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Library Feedback Form</h1>
+
+        <form action="/predict" method="POST" onsubmit="showAlert()">
+            <!-- Personal Details Section -->
+            <h3 class="mb-4">Personal Details</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="reg_no" class="form-label">Register No/Emp No:</label>
+                        <input type="text" class="form-control" id="reg_no" name="reg_no" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="department" class="form-label">Department:</label>
+                        <input type="text" class="form-control" id="department" name="department" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email ID:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="mobile" class="form-label">Mobile No:</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Feedback Analysis Section -->
+            <h3 class="mt-4 mb-3">Detailed Feedback Analysis</h3>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="visit_frequency" class="form-label">How many times do you visit the library?</label>
+                        <select class="form-select form-select-sm" id="visit_frequency" name="visit_frequency" required>
+                            <option value="Daily">Daily</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Monthly">Monthly</option>
+                            <option value="Rarely">Rarely</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="books_collected" class="form-label">How many books do you collect and return in a week?</label>
+                        <select class="form-select form-select-sm" id="books_collected" name="books_collected" required>
+                            <option value="More than 5">More than 5</option>
+                            <option value="3 to 5">3 to 5</option>
+                            <option value="1 to 3">1 to 3</option>
+                            <option value="0">0</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="reading_hours" class="form-label">How many hours do you spend reading in the library?</label>
+                        <select class="form-select form-select-sm" id="reading_hours" name="reading_hours" required>
+                            <option value="More than 3">More than 3</option>
+                            <option value="1 to 3">1 to 3</option>
+                            <option value="Less than one hour">Less than one hour</option>
+                            <option value="0">0</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="resource_purpose" class="form-label">For which purposes do you use library resources?</label>
+                        <select class="form-select form-select-sm" id="resource_purpose" name="resource_purpose" required>
+                            <option value="Academic">Academic</option>
+                            <option value="Competitive examinations">Competitive examinations</option>
+                            <option value="General knowledge">General knowledge</option>
+                            <option value="All of these">All of these</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="library_facility" class="form-label">How do you rate the library facilities?</label>
+                        <select class="form-select form-select-sm" id="library_facility" name="library_facility" required>
+                            <option value="Excellent">Excellent</option>
+                            <option value="Best">Best</option>
+                            <option value="Good">Good</option>
+                            <option value="Satisfactory">Satisfactory</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="staff_support" class="form-label">How well is the library staff supportive?</label>
+                        <select class="form-select form-select-sm" id="staff_support" name="staff_support" required>
+                            <option value="Always effective">Always effective</option>
+                            <option value="Sometimes effective">Sometimes effective</option>
+                            <option value="Rarely effective">Rarely effective</option>
+                            <option value="Poor">Poor</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="resource_quality" class="form-label">How do you rate the collections of books and online resources?</label>
+                        <select class="form-select form-select-sm" id="resource_quality" name="resource_quality" required>
+                            <option value="Very Good">Very Good</option>
+                            <option value="Good">Good</option>
+                            <option value="Satisfactory">Satisfactory</option>
+                            <option value="Not Good">Not Good</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="learning_needs" class="form-label">Does the library fulfill your learning needs?</label>
+                        <select class="form-select form-select-sm" id="learning_needs" name="learning_needs" required>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback and Suggestions Section -->
+            <div class="mb-3">
+                <label for="suggestions" class="form-label">Suggestions for Improvement:</label>
+                <textarea class="form-control" id="suggestions" name="suggestions" rows="4" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="feedback" class="form-label">Enter your feedback:</label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+        </form>
+    </div>
+</body>
+</html>

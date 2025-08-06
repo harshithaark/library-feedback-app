@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Feedback Sentiment Analysis</h1>
+
+        <!-- Feedback Analysis Graph Section -->
+        <div class="mt-4 text-center">
+            <h4>Feedback Sentiment Distribution</h4>
+            <img src="{{ url_for('static', filename='feedback_analysis.png') }}" alt="Feedback Analysis Graph" class="img-fluid graph-size">
+        </div>
+
+        <!-- Feedback Dataset Download Section -->
+        <div class="mt-4 text-center">
+            <h4>Feedback Dataset</h4>
+            <a href="{{ url_for('download_feedback') }}" class="btn btn-info btn-lg" download>Download Feedback Dataset</a>
+        </div>
+
+        <!-- View Raw Data Table -->
+        <div class="mt-4">
+            <h4>View Feedback Data</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Register No/Emp No</th>
+                            <th>Department</th>
+                            <th>Email ID</th>
+                            <th>Mobile No</th>
+                            <th>Library Visit Frequency</th>
+                            <th>Books Collected Weekly</th>
+                            <th>Hours Spent Reading</th>
+                            <th>Library Usage Purpose</th>
+                            <th>Library Facility Rating</th>
+                            <th>Staff Support Rating</th>
+                            <th>Book Collection Rating</th>
+                            <th>Learning Needs Fulfillment</th>
+                            <th>Suggestions</th>
+                            <th>Feedback</th>
+                            <th>Sentiment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in feedback_data %}
+                        <tr>
+                            <td>{{ row.Name }}</td>
+                            <td>{{ row['Register No/Emp No'] }}</td>
+                            <td>{{ row.Department }}</td>
+                            <td>{{ row['Email ID'] }}</td>
+                            <td>{{ row['Mobile No'] }}</td>
+                            <td>{{ row['Library Visit Frequency'] }}</td>
+                            <td>{{ row['Books Collected Weekly'] }}</td>
+                            <td>{{ row['Hours Spent Reading'] }}</td>
+                            <td>{{ row['Library Usage Purpose'] }}</td>
+                            <td>{{ row['Library Facility Rating'] }}</td>
+                            <td>{{ row['Staff Support Rating'] }}</td>
+                            <td>{{ row['Book Collection Rating'] }}</td>
+                            <td>{{ row['Learning Needs Fulfillment'] }}</td>
+                            <td>{{ row.Suggestions }}</td>
+                            <td>{{ row.Feedback }}</td>
+                            <td>{{ row.Sentiment }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

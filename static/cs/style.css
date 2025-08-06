@@ -1,0 +1,165 @@
+/* static/css/style.css */
+
+/* Global Styles */
+body {
+    background-color: #f4f7fc;
+}
+
+.container {
+    max-width: 900px;
+    margin-top: 50px;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Header */
+.section-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #0062cc;
+}
+
+/* Input Fields */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Submit Button */
+.btn-primary {
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+
+.btn-primary:hover {
+    background-color: #005cbf;
+    border-color: #004085;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #666;
+}
+/* Increase the size of the graph */
+.graph-size {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    max-height: 400px; /* Ensure the graph doesn't stretch too tall */
+}
+
+/* Make the table horizontally scrollable */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #d1ecf1;
+    cursor: pointer;
+}
+
+.table-bordered {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+/* Responsive Buttons */
+.btn-lg {
+    font-size: 1.1rem;
+    padding: 12px 30px;
+}
+
+/* Padding for sections */
+.container {
+    padding: 20px;
+}
+
+/* Text and Header Styling */
+h1, h4 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+h4 {
+    font-weight: bold;
+    color: #0062cc;
+}
+/* Ensuring the graph size is responsive */
+.graph-size {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px; /* Adjust based on your preferred max height */
+    margin-top: 20px;
+}
+
+/* Styling for the back button */
+.btn-back {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+/* Text and Page Style */
+h1 {
+    color: #333;
+    font-weight: 700;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .graph-size {
+        max-height: 300px; /* Reduce the size on smaller screens */
+    }
+
+    .btn-back {
+        font-size: 1rem;
+    }
+}
