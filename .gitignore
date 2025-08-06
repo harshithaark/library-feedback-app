@@ -1,3 +1,4 @@
 model/
 pytorch_model.bin
 model/
+model/model.safetensors
