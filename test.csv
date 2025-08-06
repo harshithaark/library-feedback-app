@@ -1,0 +1,102 @@
+Id,Review,True_Label
+1,"The library staff was very helpful and guided me to the exact book I needed.",Positive
+2,"Fantastic collection of programming books, including rare ones!",Positive
+3,"Quick responses from the support team, resolved my issue immediately.",Positive
+4,"The library is clean and well-organized, making it easy to find what I need.",Positive
+5,"Loved the atmosphere in the library. Peaceful and perfect for coding sessions.",Positive
+6,"The library had a decent collection, though nothing extraordinary.",Neutral
+7,"I visited the library to explore, but I didn't borrow anything this time.",Neutral
+8,"The online catalog was functional but could use some improvements.",Neutral
+9,"Attended a coding workshop, learned a bit, but expected more hands-on practice.",Neutral
+10,"Books were returned without issues, but the process felt slow.",Neutral
+11,"The library staff was rude and unhelpful when I asked for assistance.",Negative
+12,"Waited an hour to get help with the computer system, but no one showed up.",Negative
+13,"Many programming books were outdated and irrelevant to modern coding practices.",Negative
+14,"The online catalog crashed repeatedly, making it frustrating to search for books.",Negative
+15,"The coding resources promised on the website were missing in the actual library.",Negative
+16,"The book I wanted was available, but the librarian made the process unnecessarily hard.",Negative
+17,"Good collection, but the library was noisy with people chatting loudly.",Negative
+18,"Helpful staff but poor infrastructure; the internet connection was painfully slow.",Negative
+19,"Returned a book late, and the fine was exorbitant. Won't visit again!",Negative
+20,"Attended a seminar on Python programming; good content but terrible organization.",Negative
+21,"Excellent coding books section, found all the latest editions!",Positive
+22,"Quick support for online services, resolved my login issues seamlessly.",Positive
+23,"The coding workshop on JavaScript was engaging and highly informative.",Positive
+24,"Library staff greeted me warmly and assisted promptly.",Positive
+25,"Books were in perfect condition and easy to locate on the shelves.",Positive
+26,"The staff at the information desk were friendly and accommodating.",Positive
+27,"Really enjoyed the online resources available for self-learning coding.",Positive
+28,"The library environment is quiet and perfect for focused study.",Positive
+29,"Always has the newest editions of technology books and coding guides.",Positive
+30,"Great place to research, but the computers need to be upgraded.",Neutral
+31,"The study area is fine, but I couldn’t find the book I was looking for.",Neutral
+32,"The online system worked, but I feel the library could be more user-friendly.",Neutral
+33,"It’s decent for studying, but the lighting could be better in the coding section.",Neutral
+34,"The staff seemed disinterested when I asked for help.",Neutral
+35,"It wasn’t very crowded, which was nice, but the books I needed weren’t available.",Neutral
+36,"Disappointed in the Wi-Fi connection; it kept cutting out.",Neutral
+37,"The library doesn’t have enough resources for advanced programming languages.",Neutral
+38,"The opening hours aren’t convenient for people with a 9-to-5 job.",Neutral
+39,"Nice collection but the library was too noisy with kids running around.",Neutral
+40,"The computer systems are often slow, making research and coding inefficient.",Neutral
+41,"Very rude customer service at the help desk. I’m not coming back.",Negative
+42,"Spent half an hour looking for a book that wasn’t even in the catalog.",Negative
+43,"I felt ignored by the staff when I needed assistance finding my book.",Negative
+44,"The library is often out of the books I need for my programming course.",Negative
+45,"The Wi-Fi was extremely slow, which made it impossible to get any work done.",Negative
+46,"Disappointing customer service. The staff never returned my calls.",Negative
+47,"Returned a book that was never marked as returned. I’ve been getting fines for months.",Negative
+48,"There were no available study rooms, and the atmosphere was chaotic.",Negative
+49,"The library has become more of a social gathering spot than a quiet place to study.",Negative
+50,"I wanted to ask about library events, but the staff weren’t available at all.",Negative
+51,"The library is always too crowded during exam season. Not an ideal place to study.",Negative
+52,"Had to cancel my membership because the library lost my books multiple times.",Negative
+53,"Customer service couldn’t help with my technical problem. Very frustrating.",Negative
+54,"I couldn’t even get a computer to work when I needed to finish an assignment.",Negative
+55,"The coding books are outdated, and the collection needs major updates.",Negative
+56,"Always a great experience finding the materials I need for learning new languages.",Positive
+57,"I love the way they organize their coding section by language, it’s easy to navigate.",Positive
+58,"The library has great resources, but the parking lot is always full.",Neutral
+59,"I found an excellent coding tutorial, but it was hard to find due to poor categorization.",Neutral
+60,"The library is well-organized, but the noise level can be distracting.",Neutral
+61,"I used the online catalog and it was easy to use. Very efficient.",Positive
+62,"Had a pleasant experience with the library app; it helped me find what I needed.",Positive
+63,"I recommend this library for anyone looking for great coding and programming resources.",Positive
+64,"Love how they offer various online courses and webinars. A solid library for developers.",Positive
+65,"Their database of resources is top-notch. Perfect for anyone in tech.",Positive
+66,"I found the right resources for my coding course, very satisfied.",Positive
+67,"Nice library overall, but I had trouble finding a quiet place to study.",Neutral
+68,"I couldn't get the computer I needed, but the environment was generally okay.",Neutral
+69,"It was a little hard to find the book I wanted, but the staff eventually helped.",Neutral
+70,"The library could benefit from adding more books related to advanced coding techniques.",Neutral
+71,"Not enough seating in the library during peak hours.",Neutral
+72,"The library is fine, but it's always so crowded that it’s difficult to find space.",Neutral
+73,"The library is good, but I wish they had more books on AI and machine learning.",Neutral
+74,"Staff were unhelpful and the online catalog was down when I visited.",Negative
+75,"Terrible experience. The book I wanted was unavailable and no one could help.",Negative
+76,"The library was disorganized, and no one was there to assist when I had questions.",Negative
+77,"Not only was my book missing, but the help desk staff didn’t know where to find it.",Negative
+78,"Very disappointed by the lack of resources in the tech section.",Negative
+79,"The library staff couldn’t help me find a book I was looking for, so I left frustrated.",Negative
+80,"The system crashed when I tried to log into the library’s online catalog.",Negative
+81,"Extremely disappointed in the customer service. I won’t return.",Negative
+82,"Books were in poor condition. Some pages were torn, others were missing.",Negative
+83,"The library smells old and stuffy. It's not a pleasant place to study.",Negative
+84,"I was promised a quiet space, but it was full of people chatting loudly.",Negative
+85,"I regret joining this library. The service and resources are not worth it.",Negative
+86,"The atmosphere is great, and I found all the coding books I needed.",Positive
+87,"I was impressed with how helpful the library staff was when I asked for coding book recommendations.",Positive
+88,"The library is a great resource for programming courses. Highly recommend it.",Positive
+89,"I enjoyed the quiet reading area for studying coding problems.",Positive
+90,"Amazing selection of programming books, very happy with my visit.",Positive
+91,"I’m happy with my visit, but I wish the library was open longer.",Neutral
+92,"I couldn’t find the right book, but the search system was easy to use.",Neutral
+93,"The library is fine, but the space was too crowded when I visited.",Neutral
+94,"The library has good resources but needs more space for coding workshops.",Neutral
+95,"It’s a decent library but lacked some newer resources I was looking for.",Neutral
+96,"Great selection of books, but the building felt outdated and uncomfortable.",Neutral
+97,"There was no free Wi-Fi and it was hard to get work done.",Neutral
+98,"The library doesn’t have enough books on modern software development techniques.",Neutral
+99,"The library doesn’t have a lot of books on emerging programming languages.",Neutral
+100,"I had an okay visit. The library wasn’t particularly quiet, but I still got some work done.",Neutral
+
