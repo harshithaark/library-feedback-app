@@ -5,15 +5,17 @@ import matplotlib
 matplotlib.use('Agg')  # Use Agg backend for non-interactive plotting
 import matplotlib.pyplot as plt
 from flask import Flask, request, render_template, send_from_directory
-from transformers import BertTokenizer, BertForSequenceClassification
+from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
+
 import torch
 
 app = Flask(__name__)
 
 # Load the BERT model and tokenizer
 model_path = 'model/'  # Path to your model directory
-model = BertForSequenceClassification.from_pretrained(model_path)
-tokenizer = BertTokenizer.from_pretrained(model_path)
+tokenizer = DistilBertTokenizer.from_pretrained(model_path)
+model = DistilBertForSequenceClassification.from_pretrained(model_path)
+
 
 # Ensure the model is on the correct device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

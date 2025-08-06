@@ -13,28 +13,31 @@ import numpy as np
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
-# Load dataset
+# Load and preprocess data
 data = pd.read_csv('data/train.csv')
 
-# Clean and map ratings
+# Drop rows with missing values
 data = data.dropna(subset=['Review', 'Rating'])
+
+# Ensure 'Rating' column is numeric and clean any non-numeric entries
 data['Rating'] = pd.to_numeric(data['Rating'], errors='coerce')
 data = data.dropna(subset=['Rating'])
 data['Rating'] = data['Rating'].astype(int)
 
-# Keep only relevant ratings
-rating_map = {1: 0, 3: 1, 5: 2}  # Negative: 0, Neutral: 1, Positive: 2
-data = data[data['Rating'].isin(rating_map)]
+# Map ratings to sentiment labels
+rating_map = {1: 0, 3: 1, 5: 2}  # Negative, Neutral, Positive
+data = data[data['Rating'].isin(rating_map.keys())]
 data['Rating'] = data['Rating'].map(rating_map)
 
-# 🧪 Optional: Use a sample to debug (uncomment during testing)
-# data = data.sample(500, random_state=42)
+# Sample small subset for faster training (remove this for full training later)
+data = data.sample(n=1000, random_state=42).reset_index(drop=True)
 
-if data.empty:
-    print("No valid data available after filtering. Exiting...")
+# Exit if no valid data remains
+if len(data) == 0:
+    print("No valid data available after filtering ratings. Exiting...")
     exit()
 
-# Split data
+# Train-test split
 train_texts, val_texts, train_labels, val_labels = train_test_split(
     data['Review'].tolist(),
     data['Rating'].tolist(),
@@ -60,7 +63,7 @@ class SentimentDataset(Dataset):
             text,
             truncation=True,
             padding='max_length',
-            max_length=128,
+            max_length=64,
             return_tensors='pt'
         )
         return {
@@ -69,31 +72,31 @@ class SentimentDataset(Dataset):
             'labels': torch.tensor(label, dtype=torch.long)
         }
 
+# Create datasets and loaders
 train_dataset = SentimentDataset(train_texts, train_labels)
 val_dataset = SentimentDataset(val_texts, val_labels)
 
-# ⚠️ Reduce batch size to prevent memory issues
-train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=4)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=32)
 
-# Load model
+# Load pre-trained model
 model = DistilBertForSequenceClassification.from_pretrained(
     'distilbert-base-uncased',
     num_labels=3
 )
 model.to(device)
 
-# Class weights for imbalance
+# Compute class weights
 class_weights = compute_class_weight('balanced', classes=np.array([0, 1, 2]), y=data['Rating'])
 class_weights = torch.tensor(class_weights, dtype=torch.float).to(device)
 
 # Optimizer
 optimizer = AdamW(model.parameters(), lr=2e-5)
 
-# Training Loop
-epochs = 3
+# Training loop
+epochs = 2
 for epoch in range(epochs):
-    print(f"\nEpoch {epoch + 1}")
+    print(f"Epoch {epoch + 1}")
     model.train()
     train_loss = 0
     for batch in tqdm(train_loader, desc="Training"):
@@ -128,7 +131,7 @@ for epoch in range(epochs):
     val_accuracy = accuracy_score(val_labels_list, val_preds)
     print(f"Validation Accuracy: {val_accuracy * 100:.2f}%")
 
-# Save model
+# Save model and tokenizer
 model.save_pretrained('model/')
 tokenizer.save_pretrained('model/')
-print("✅ Model saved to /model/")
+print("Model saved!")
