@@ -14,7 +14,21 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
 # Load and preprocess data
+# Load the full dataset
 data = pd.read_csv('data/train.csv')
+
+# Use the correct columns from your survey data
+texts = data['Feedback']
+labels = data['Sentiment']
+
+# Map sentiment labels to numerical values
+label_mapping = {
+    'Positive': 1,
+    'Negative': 0,
+    'Neutral': 2
+}
+labels = labels.map(label_mapping)
+
 
 # Drop rows with missing values
 data = data.dropna(subset=['Review', 'Rating'])
