@@ -1,7 +1,8 @@
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
-from transformers import BertTokenizer, BertForSequenceClassification, AdamW
+from transformers import BertTokenizer, BertForSequenceClassification
+from torch.optim import AdamW
 from sklearn.model_selection import train_test_split
 from sklearn.utils.class_weight import compute_class_weight  # Correct import
 from sklearn.metrics import accuracy_score
